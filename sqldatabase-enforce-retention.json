@@ -1,0 +1,19 @@
+{
+    "policyRule": {
+	  "if": {
+		"allOf": [
+		  {
+			"field": "type",
+			"equals": "Microsoft.Sql/servers/databases/backupShortTermRetentionPolicies"
+		  },
+		  {
+			"field": "Microsoft.Sql/servers/databases/backupShortTermRetentionPolicies/retentionDays",
+			"notEquals": 14
+		  }
+		]
+	  },
+	  "then": {
+		"effect": "deny"
+	  }
+    }
+}
