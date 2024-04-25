@@ -1,0 +1,19 @@
+{
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.DBForPostgreSql/flexibleServers"
+          },
+          {
+            "field": "Microsoft.DBForPostgreSql/flexibleServers/backup.backupRetentionDays",
+            "notEquals": 14
+          }
+        ]
+      },
+      "then": {
+        "effect": "deny"
+      }
+    }
+}
